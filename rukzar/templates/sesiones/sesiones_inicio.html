@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load mis_filtros %}
+  {% block body_block %}
+      <div class="jumbotron">
+        <h1>{{text|cutwords:'Hola '}} {{number}} ... estás en la página donde se crean las sesiones de entrenamiento:</h1>
+        <a href="{% url 'admin:index' %}">ADMIN de SESIONES</a>
+        <br>
+        <img src="{% static "images/Zarruk2.png" %}" alt="La imagen no existe">
+      </div>
+  {% endblock %}

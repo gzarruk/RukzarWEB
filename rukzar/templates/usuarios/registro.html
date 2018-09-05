@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load mis_filtros %}
+  {% block body_block %}
+    <div class="container">
+        <div class="jumbotron">
+          {% if registrado %}
+            <h1>Gracias por crear tu cuenta!</h1>
+          {% else %}
+            <h1>Llena el formulario con tus datos para crear tu cuenta</h1>
+            <form enctype="multipart/form-data" method="post">
+              {% csrf_token %}
+              {{ usuario_form.as_p }}
+              {{ perfil_form.as_p }}
+              <input type="submit" name="" value="Registro">
+            </form>
+          {% endif %}
+        </div>
+      </div>
+  {% endblock %}

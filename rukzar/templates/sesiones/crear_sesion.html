@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>FORMULARIO PARA SESIONES</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>FORMULARIO: Nueva Sesión de Entrenamiento</h1>
+        <a href="{% url 'sesiones:other' %}">OTRA PÁGINA</a>
+        <a href="{% url 'admin:index' %}">ADMIN de SESIONES</a>
+        <form method="POST">
+          {{ form.as_p }}
+          {% csrf_token %}
+          <input type="submit" class="btn btn-primary" value="GUARDAR">
+        </form>
+      </div>
+
+    </div>
+
+  </body>
+</html>
